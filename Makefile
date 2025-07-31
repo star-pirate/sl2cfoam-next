@@ -82,8 +82,8 @@ CFLAGS = -std=gnu11 -fopenmp -O3 -fPIC -march=native -fno-math-errno $(ADD_CFLAG
          -I$(WIGDIR)/inc -I$(FASTWIGDIR)/inc -I$(EXTDIR) -Iinc -Isrc -DDEBUG_OFF=1 # optimized
 endif
 
-LDFLAGS = $(CFLAGS) -L$(WIGDIR)/lib/ -L$(FASTWIGDIR)/lib/ $(BLAS_LDFLAG) -Wl,--allow-shlib-undefined
-LDLIBS = $(BLAS_LDLIBS) -lmpc -lmpfr -lgmp -lquadmath -lfastwigxj -lwigxjpf -lm 
+LDFLAGS = $(CFLAGS) -L$(WIGDIR)/lib/ -L$(FASTWIGDIR)/lib/ $(BLAS_LDFLAG)
+LDLIBS = $(BLAS_LDLIBS) -lmpc -lmpfr -lgmp -lquadmath -lfastwigxj -lwigxjpf -lwigxjpf_quadmath -lm 
 ARFLAGS = rcs
 
 ###############################################################################################
